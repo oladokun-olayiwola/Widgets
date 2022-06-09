@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
+import './Search.css'
 
 const Search = () => {
 
@@ -51,20 +51,23 @@ const Search = () => {
     })
 
     return (
-        <div>
-            <div className='ui form'>
-                <label>Enter Search Term</label>
-                <input 
-                    type="text"
-                    value={term}
-                    onChange={e => {setTerm(e.target.value)}}
-                />
-            <div className='ui celled list'>
-              { renderedResults }
-            </div>
-            </div>
+      <div>
+        <div className="ui form ">
+          <label>Enter Search Term</label>
+          <div className="full">
+            <input
+              type="text"
+              value={term}
+              onChange={(e) => {
+                setTerm(e.target.value);
+              }}
+            />
+
+          </div>
+          <div className="ui celled list">{renderedResults}</div>
         </div>
-    )
+      </div>
+    );
 }
 
 export default Search
